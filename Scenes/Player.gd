@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var speed = 35
+export (int) var speed = 1400
 
 var velocity = Vector2()
 
@@ -18,9 +18,13 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity * delta)
 	# if we're moving, play the "walk" animation
 	if velocity.length() > 0:
 		$Sprite.play()
 	else:
 		$Sprite.stop()
+
+func _process(delta):
+	# set z-index to y position
+	$Sprite.z_index = int(position.y)
