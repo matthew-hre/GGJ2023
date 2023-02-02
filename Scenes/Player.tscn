@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/player-up-down.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/player_left.png" type="Texture" id=3]
+[ext_resource path="res://Assets/player_right.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.04128, 3.77656 )
@@ -14,11 +16,37 @@ region = Rect2( 0, 0, 10, 25 )
 atlas = ExtResource( 1 )
 region = Rect2( 10, 0, 10, 25 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 10, 25 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 10, 0, 10, 25 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 10, 25 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 10, 0, 10, 25 )
+
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
 "name": "walk-up-down",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "walk-right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "walk-left",
 "speed": 5.0
 } ]
 
@@ -30,6 +58,6 @@ position = Vector2( 0, 9.24334 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 4 )
-animation = "walk-up-down"
+frames = SubResource( 8 )
+animation = "walk-right"
 speed_scale = 0.5
