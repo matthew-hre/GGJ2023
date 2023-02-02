@@ -32,4 +32,4 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
 animation = "walk-up-down"
-speed_scale = 0.4
+speed_scale = 0.5
