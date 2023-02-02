@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/room noisemp3.mp3-5adfb96bc21f41dffc884211cab1b70f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/room noisemp3.mp3"
+dest_files=[ "res://.import/room noisemp3.mp3-5adfb96bc21f41dffc884211cab1b70f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

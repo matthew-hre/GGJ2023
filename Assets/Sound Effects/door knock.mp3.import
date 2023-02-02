@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/door knock.mp3-d7e83fe7a393ecf2d3e12d64261d2fc4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/door knock.mp3"
+dest_files=[ "res://.import/door knock.mp3-d7e83fe7a393ecf2d3e12d64261d2fc4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

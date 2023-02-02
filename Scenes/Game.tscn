@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/template/template-top.png" type="Texture" id=2]
 [ext_resource path="res://Assets/template/template-base.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/NoteManager.tscn" type="PackedScene" id=4]
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Sprite
 
 
@@ -38,16 +39,21 @@ extents = Vector2( 40.9967, 10 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 10, 30.5206 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 5.48839, 10.1987 )
 
 [node name="Game" type="Node"]
+
+[node name="NoteManager" type="Node2D" parent="."]
+z_index = 4096
+
+[node name="NoteManager" parent="NoteManager" instance=ExtResource( 4 )]
 
 [node name="TopLayer" type="Sprite" parent="."]
 z_index = 1
 texture = ExtResource( 2 )
 centered = false
-script = SubResource( 7 )
+script = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 82, 88 )
@@ -84,19 +90,19 @@ shape = SubResource( 6 )
 
 [node name="BottomRightPillar" type="CollisionShape2D" parent="CollisionAreas/Pillars"]
 position = Vector2( 118.51, 113.833 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="BottomLeftPillar" type="CollisionShape2D" parent="CollisionAreas/Pillars"]
 position = Vector2( 7.39, 114.745 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="TopRightPillar" type="CollisionShape2D" parent="CollisionAreas/Pillars"]
 position = Vector2( 118.52, 37.6663 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="TopLeftPillar" type="CollisionShape2D" parent="CollisionAreas/Pillars"]
 position = Vector2( 7.40012, 37.578 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="FloorLayer" type="Sprite" parent="."]
 z_index = -1
