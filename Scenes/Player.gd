@@ -21,16 +21,24 @@ func get_input():
 		velocity = Vector2()
 		if Input.is_action_pressed("right"):
 			velocity.x += 1
-			$Sprite.animation = "walk-right"
 		if Input.is_action_pressed("left"):
 			velocity.x -= 1
-			$Sprite.animation = "walk-left"
 		if Input.is_action_pressed("down"):
 			velocity.y += 1
-			$Sprite.animation = "walk-up-down"
 		if Input.is_action_pressed("up"):
 			velocity.y -= 1
+		
+		if velocity.x != 0 and velocity.y != 0:
 			$Sprite.animation = "walk-up-down"
+		elif velocity.x > 0:
+			$Sprite.animation = "walk-right"
+		elif velocity.x < 0:
+			$Sprite.animation = "walk-left"
+		elif velocity.y > 0:
+			$Sprite.animation = "walk-up-down"
+		elif velocity.y < 0:
+			$Sprite.animation = "walk-up-down"
+			
 		velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
