@@ -20,3 +20,5 @@ func _process(delta):
 		z_index = 100
 	else:
 		z_index = 1
+
+	delta = delta * 1
