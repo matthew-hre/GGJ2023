@@ -50,7 +50,3 @@ func _physics_process(delta):
 	else:
 		$Sprite.stop()
 		$Sprite.set_frame(0)
-
-func _process(_delta):
-	# set z-index to y position
-	$Sprite.z_index = int(position.y)

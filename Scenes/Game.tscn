@@ -5,25 +5,10 @@
 [ext_resource path="res://Assets/template/template-base.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/NoteManager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/NoteTrigger.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/TopLayer.gd" type="Script" id=6]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Sprite
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 5.48839, 10.1987 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 81.3231, 10 )
@@ -39,9 +24,6 @@ extents = Vector2( 40.9967, 10 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 10, 30.5206 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 5.48839, 10.1987 )
 
 [node name="Game" type="Node"]
 
@@ -60,7 +42,17 @@ filepath = "note1"
 z_index = 1
 texture = ExtResource( 2 )
 centered = false
-script = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TopLayer"]
+
+[node name="BottomRightPillar" type="CollisionShape2D" parent="TopLayer/StaticBody2D"]
+position = Vector2( 118.51, 113.833 )
+shape = SubResource( 7 )
+
+[node name="BottomLeftPillar" type="CollisionShape2D" parent="TopLayer/StaticBody2D"]
+position = Vector2( 7.39, 114.745 )
+shape = SubResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 82, 88 )
@@ -93,15 +85,7 @@ shape = SubResource( 5 )
 position = Vector2( -6.35678, 156.006 )
 shape = SubResource( 6 )
 
-[node name="Pillars" type="Area2D" parent="CollisionAreas"]
-
-[node name="BottomRightPillar" type="CollisionShape2D" parent="CollisionAreas/Pillars"]
-position = Vector2( 118.51, 113.833 )
-shape = SubResource( 7 )
-
-[node name="BottomLeftPillar" type="CollisionShape2D" parent="CollisionAreas/Pillars"]
-position = Vector2( 7.39, 114.745 )
-shape = SubResource( 7 )
+[node name="Pillars" type="StaticBody2D" parent="CollisionAreas"]
 
 [node name="TopRightPillar" type="CollisionShape2D" parent="CollisionAreas/Pillars"]
 position = Vector2( 118.52, 37.6663 )
