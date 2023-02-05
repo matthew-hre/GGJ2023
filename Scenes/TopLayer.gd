@@ -9,6 +9,12 @@ func _process(delta):
 
 	# loop through all the CollisionAreas in the CollisionBody and find the closest one to the player
 	var closest = null
+
+	# if collisions has children, loop through them
+
+	if collisions.get_child_count() <= 0:
+		return
+
 	for collision in collisions.get_children():
 		if closest == null:
 			closest = collision

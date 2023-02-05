@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/outside.png-6e9e6c82eb7d06423c07a57033bd820d.stex"
+path="res://.import/hallwaytobathroomandkitchen.png-3419706934c35760549e06cc7d214729.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/template/outside.png"
-dest_files=[ "res://.import/outside.png-6e9e6c82eb7d06423c07a57033bd820d.stex" ]
+source_file="res://Assets/template/hallwaytobathroomandkitchen.png"
+dest_files=[ "res://.import/hallwaytobathroomandkitchen.png-3419706934c35760549e06cc7d214729.stex" ]
 
 [params]
 

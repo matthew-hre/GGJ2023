@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/outside.png-6e9e6c82eb7d06423c07a57033bd820d.stex"
+path="res://.import/kitchen.png-dc409c8d40579f23a4a8936d1b811243.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/template/outside.png"
-dest_files=[ "res://.import/outside.png-6e9e6c82eb7d06423c07a57033bd820d.stex" ]
+source_file="res://Assets/template/kitchen.png"
+dest_files=[ "res://.import/kitchen.png-dc409c8d40579f23a4a8936d1b811243.stex" ]
 
 [params]
 
