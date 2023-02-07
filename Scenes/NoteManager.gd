@@ -6,6 +6,8 @@ var enabled = false
 var text = ""
 var wrap_width = 0
 var current_line = 0
+var read_notes = []
+var persistent = false
 
 signal note_enter
 signal note_exit
@@ -15,10 +17,6 @@ var font = load("res://Assets/Fonts/notefont.tres")
 func _ready():
 	if (filepath != ""):
 		load_note()
-
-	# connect to every note trigger
-	for note in get_tree().get_nodes_in_group("NoteTrigger"):
-		note.connect("player_entered", self, "trigger_note", [filepath])
 
 	wrap_width = get_viewport_rect().size.x - 20
 	current_line = 0
@@ -32,6 +30,8 @@ func _draw():
 
 func _input(event):
 	# in the player presses the down key, scroll down
+	if (!enabled):
+		return
 	if event.is_action_pressed("down"):
 		if current_line < $RichTextLabel.get_line_count() - 1:
 			current_line += 1
@@ -68,10 +68,24 @@ func load_note():
 	$RichTextLabel.bbcode_text = text
 	$RichTextLabel.scroll_to_line(current_line)
 
-func trigger_note(new_filepath, other_thing):
+func trigger_note(new_filepath, persistent, other_thing):
 	print(other_thing) # idk what this is but it's needed
+	print("Triggered")
 	filepath = new_filepath
+	if (!persistent):
+		read_notes.append(filepath)
 	load_note()
 	enabled = true
 	emit_signal("note_enter")
 	update()
+
+
+func connect_to_triggers():
+	for note in get_tree().get_nodes_in_group("NoteTrigger"):
+		print("Found " + note.name)
+		print(read_notes)
+		if (note.name in read_notes):
+			note.queue_free()
+			continue
+		note.connect("player_entered", self, "trigger_note", [filepath], persistent)
+		print("Connected to " + note.name)

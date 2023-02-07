@@ -1,94 +1,97 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/TopLayer.gd" type="Script" id=1]
-[ext_resource path="res://Assets/template/template-top.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/NoteTrigger.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/template/template-base.png" type="Texture" id=4]
+[ext_resource path="res://Assets/basement-top-left/basement-top-left-floor.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/basement-top-left/basement-top-left-table.png" type="Texture" id=4]
+[ext_resource path="res://Assets/basement-top-left/basement-top-left-couch.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 24.8731, 6.35848 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.48839, 10.1987 )
+extents = Vector2( 35.9483, 5.71889 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 81.3231, 10 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 0.41449, 40.4179 )
+extents = Vector2( 90.8911, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 83.8819 )
+extents = Vector2( 10, 26.0762 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 40.9967, 10 )
+extents = Vector2( 8.5477, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 72.738, 10 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 10, 30.5206 )
+extents = Vector2( 10, 73.6153 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 5.48839, 10.1987 )
 
 [node name="basement-top-left" type="Node2D"]
 
-[node name="TopLayer" type="Sprite" parent="."]
-z_index = 1
-texture = ExtResource( 2 )
-centered = false
+[node name="TopLayer" type="StaticBody2D" parent="."]
 script = ExtResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="TopLayer"]
+[node name="BottomRightPillar" type="CollisionShape2D" parent="TopLayer"]
+position = Vector2( 98.51, 124.833 )
+shape = SubResource( 8 )
 
-[node name="BottomRightPillar" type="CollisionShape2D" parent="TopLayer/StaticBody2D"]
-position = Vector2( 118.51, 113.833 )
+[node name="Sprite" type="Sprite" parent="TopLayer/BottomRightPillar"]
+position = Vector2( -98.5, -124.8 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="BottomLeftPillar" type="CollisionShape2D" parent="TopLayer"]
+position = Vector2( 97.39, 87.745 )
 shape = SubResource( 1 )
 
-[node name="BottomLeftPillar" type="CollisionShape2D" parent="TopLayer/StaticBody2D"]
-position = Vector2( 7.39, 114.745 )
-shape = SubResource( 1 )
+[node name="Sprite" type="Sprite" parent="TopLayer/BottomLeftPillar"]
+position = Vector2( -1, -6 )
+texture = ExtResource( 5 )
 
 [node name="BottomLayer" type="Sprite" parent="."]
 z_index = -1
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 centered = false
 
 [node name="Walls" type="StaticBody2D" parent="BottomLayer"]
 
 [node name="BackWall" type="CollisionShape2D" parent="BottomLayer/Walls"]
-position = Vector2( 86.9688, 29.9661 )
+position = Vector2( 92.9688, 29.9661 )
 shape = SubResource( 2 )
 
-[node name="Stairs" type="CollisionShape2D" parent="BottomLayer/Walls"]
-position = Vector2( 168.938, 19.4087 )
-shape = SubResource( 3 )
-
 [node name="RightWall" type="CollisionShape2D" parent="BottomLayer/Walls"]
-position = Vector2( 198.328, 83.5915 )
+position = Vector2( 197.697, 151.914 )
 shape = SubResource( 4 )
 
 [node name="BottomWall" type="CollisionShape2D" parent="BottomLayer/Walls"]
-position = Vector2( 33.5075, 173.909 )
+position = Vector2( 8.5075, 173.909 )
 shape = SubResource( 5 )
 
 [node name="BottomWall2" type="CollisionShape2D" parent="BottomLayer/Walls"]
-position = Vector2( 179.331, 173.981 )
-shape = SubResource( 5 )
+position = Vector2( 131.82, 174.401 )
+shape = SubResource( 9 )
 
 [node name="LeftWall" type="CollisionShape2D" parent="BottomLayer/Walls"]
-position = Vector2( -6.35678, 156.006 )
+position = Vector2( -6.35678, 105.006 )
 shape = SubResource( 6 )
 
 [node name="Pillars" type="StaticBody2D" parent="BottomLayer"]
 
 [node name="TopRightPillar" type="CollisionShape2D" parent="BottomLayer/Pillars"]
-position = Vector2( 118.52, 37.6663 )
+position = Vector2( 73.52, 37.6663 )
 shape = SubResource( 7 )
 
 [node name="TopLeftPillar" type="CollisionShape2D" parent="BottomLayer/Pillars"]
-position = Vector2( 7.40012, 37.578 )
+position = Vector2( 184.4, 37.578 )
 shape = SubResource( 7 )
 
 [node name="Interactives" type="Node" parent="."]
 
-[node name="NoteTrigger" parent="Interactives" groups=[
-"NoteTrigger",
-] instance=ExtResource( 3 )]
-position = Vector2( 37.2704, 49.0695 )
-filepath = "note1"
+[node name="Door" parent="Interactives" instance=ExtResource( 3 )]
+position = Vector2( 202.025, 85.5612 )
+scale = Vector2( 1, 4 )
+next_room = "basement-top-right"

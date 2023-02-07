@@ -3,6 +3,22 @@ extends Node
 export var current_room = ""
 
 func _ready():
+	get_all_doors()
+	set_room()
+
+
+func get_all_doors():
+	var interactives = get_node("/root/Game/Interactives")
+	for n in interactives.get_children():
+		for c in n.get_children():
+			if "Door" in c.name:
+				print(c.name)
+				c.connect("player_entered", self, "new_room", [current_room])
+
+
+func new_room(room, other_thing):
+	print(other_thing) # idk what this is but it's needed
+	current_room = room
 	set_room()
 
 func set_room():
@@ -14,6 +30,7 @@ func set_room():
 	var interactives = get_node(current_room + "/Interactives").duplicate()
 
 	var game_root = get_node("/root/Game")
+	var note_manager = get_node("/root/Game/NoteManager/NoteManager")
 
 	# clear all the children of the top and bottom layers
 	delete_children(game_root.get_node("TopLayer"))
@@ -24,6 +41,10 @@ func set_room():
 	game_root.get_node("TopLayer").add_child(top_layer)
 	game_root.get_node("BottomLayer").add_child(bottom_layer)
 	game_root.get_node("Interactives").add_child(interactives)
+
+	note_manager.connect_to_triggers()
+
+	get_all_doors()
 
 	# free the room scene
 	room_scene.queue_free()

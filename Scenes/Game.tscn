@@ -7,9 +7,10 @@
 [node name="Game" type="Node"]
 
 [node name="RoomManager" parent="." instance=ExtResource( 2 )]
+current_room = "basement-top-right"
 
 [node name="NoteManager" type="Node2D" parent="."]
-z_index = 4096
+z_index = 101
 
 [node name="NoteManager" parent="NoteManager" instance=ExtResource( 4 )]
 

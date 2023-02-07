@@ -4,6 +4,7 @@ export (int) var speed = 1400
 
 var velocity = Vector2()
 var can_move = true
+var dir = Vector2()
 
 func _ready():
 	# connect to the NoteManager's "note_hit" signal. the NoteManager is in the root node
@@ -21,12 +22,16 @@ func get_input():
 		velocity = Vector2()
 		if Input.is_action_pressed("right"):
 			velocity.x += 1
+			dir = Vector2(1, 0)
 		if Input.is_action_pressed("left"):
 			velocity.x -= 1
+			dir = Vector2(-1, 0)
 		if Input.is_action_pressed("down"):
 			velocity.y += 1
+			dir = Vector2(0, 1)
 		if Input.is_action_pressed("up"):
 			velocity.y -= 1
+			dir = Vector2(0, -1)
 		
 		if velocity.x != 0 and velocity.y != 0:
 			$Sprite.animation = "walk-up-down"
