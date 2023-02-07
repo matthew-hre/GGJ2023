@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/basementbathroomnoise.mp3-c182da126b33d23a5767239dcc9ed795.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/basementbathroomnoise.mp3"
+dest_files=[ "res://.import/basementbathroomnoise.mp3-c182da126b33d23a5767239dcc9ed795.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

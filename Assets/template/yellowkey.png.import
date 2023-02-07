@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yellowkey.png-bffc0a2a4ea6007c22442895f802956e.stex"
+path="res://.import/yellowkey.png-8fba289ee4a859a0204544b9b931ce79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/template/2nd flor/yellowkey.png"
-dest_files=[ "res://.import/yellowkey.png-bffc0a2a4ea6007c22442895f802956e.stex" ]
+source_file="res://Assets/template/yellowkey.png"
+dest_files=[ "res://.import/yellowkey.png-8fba289ee4a859a0204544b9b931ce79.stex" ]
 
 [params]
 

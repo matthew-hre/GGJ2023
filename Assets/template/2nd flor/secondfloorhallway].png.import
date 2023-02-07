@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bluekey.png-77df12dbeed472f4b125729bcaaa049a.stex"
+path="res://.import/secondfloorhallway].png-c147b79417cb167e238ba9ebe18af870.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/template/bluekey.png"
-dest_files=[ "res://.import/bluekey.png-77df12dbeed472f4b125729bcaaa049a.stex" ]
+source_file="res://Assets/template/2nd flor/secondfloorhallway].png"
+dest_files=[ "res://.import/secondfloorhallway].png-c147b79417cb167e238ba9ebe18af870.stex" ]
 
 [params]
 
