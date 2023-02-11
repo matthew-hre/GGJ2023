@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/redkey.png-a5b97f7dfe670bf232cd5195fe05f22e.stex"
+path="res://.import/redkey.png-09c6be55db0bebc8d80f8b0a5b8b41c2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/template/2nd flor/redkey.png"
-dest_files=[ "res://.import/redkey.png-a5b97f7dfe670bf232cd5195fe05f22e.stex" ]
+source_file="res://Assets/template/redkey.png"
+dest_files=[ "res://.import/redkey.png-09c6be55db0bebc8d80f8b0a5b8b41c2.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
