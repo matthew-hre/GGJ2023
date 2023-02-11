@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Fonts/notefont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/PauseMenu.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 192.0
+margin_bottom = 168.0
+color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 192.0
+margin_bottom = 40.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "
+[center]paused"
+text = "
+paused"

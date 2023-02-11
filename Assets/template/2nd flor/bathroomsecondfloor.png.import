@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hallwaytobathroomandkitchenalternate.png-23f9de9665b3a5d5ccd67787a9056e7a.stex"
+path="res://.import/bathroomsecondfloor.png-f1f74f6ca9ad2c3ecaa56f97ec149e02.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/template/main-floor/hallwaytobathroomandkitchenalternate.png"
-dest_files=[ "res://.import/hallwaytobathroomandkitchenalternate.png-23f9de9665b3a5d5ccd67787a9056e7a.stex" ]
+source_file="res://Assets/template/2nd flor/bathroomsecondfloor.png"
+dest_files=[ "res://.import/bathroomsecondfloor.png-f1f74f6ca9ad2c3ecaa56f97ec149e02.stex" ]
 
 [params]
 
