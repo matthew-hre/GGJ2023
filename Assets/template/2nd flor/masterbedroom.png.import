@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bathroom-basement.png-d5f84d78c4260c031f1dbc37a560050f.stex"
+path="res://.import/masterbedroom.png-d64532cd688c97b62cf283304a92c4da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/basement-top-left/bathroom-basement.png"
-dest_files=[ "res://.import/bathroom-basement.png-d5f84d78c4260c031f1dbc37a560050f.stex" ]
+source_file="res://Assets/template/2nd flor/masterbedroom.png"
+dest_files=[ "res://.import/masterbedroom.png-d64532cd688c97b62cf283304a92c4da.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
