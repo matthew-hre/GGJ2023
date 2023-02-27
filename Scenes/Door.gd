@@ -2,6 +2,10 @@ extends Area2D
 
 export var next_room = ""
 
+export var new_X = 0
+export var new_Y = 0
+
+
 signal player_entered(next_room)
 
 var SCREEN_WIDTH = 192
@@ -16,18 +20,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		var dir = body.dir
-
-		if dir == Vector2(1, 0):
-			body.position = Vector2(8, body.position.y)
-		elif dir == Vector2(-1, 0):
-			body.position = Vector2(SCREEN_WIDTH - 8, body.position.y)
-		elif dir == Vector2(0, 1):
-			body.position = Vector2(body.position.x, 16)
-		elif dir == Vector2(0, -1):
-			body.position = Vector2(body.position.x, SCREEN_HEIGHT - 16)
-		
-
+		body.position = Vector2(new_X, new_Y)
 		call_deferred("player_entered_func", next_room)
 
 func player_entered_func(next_room):

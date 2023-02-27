@@ -104,6 +104,8 @@ next_room = "basement-storage"
 position = Vector2( -9.88053, 72.3171 )
 scale = Vector2( 1, 4 )
 next_room = "basement-top-left"
+new_X = 10
+new_Y = 10
 
 [node name="Door3" parent="Interactives" instance=ExtResource( 5 )]
 position = Vector2( 179, -10 )
