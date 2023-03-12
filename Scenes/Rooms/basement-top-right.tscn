@@ -91,7 +91,9 @@ shape = SubResource( 7 )
 
 [node name="Interactives" type="Node" parent="."]
 
-[node name="NoteTrigger" parent="Interactives" groups=["NoteTrigger"] instance=ExtResource( 3 )]
+[node name="NoteTrigger" parent="Interactives" groups=[
+"NoteTrigger",
+] instance=ExtResource( 3 )]
 position = Vector2( 43.5771, 46.757 )
 filepath = "whoops"
 
@@ -110,3 +112,5 @@ new_Y = 10
 [node name="Door3" parent="Interactives" instance=ExtResource( 5 )]
 position = Vector2( 179, -10 )
 next_room = "main_hallway"
+new_X = 8
+new_Y = 148
