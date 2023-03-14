@@ -31,6 +31,17 @@ func connect_to_keys():
 		print(node.name)
 		# if the node is a key
 		if "Key" in node.name:
+
+			if node.key_type == "red" and has_red_key:
+				node.queue_free()
+				continue
+			elif node.key_type == "blue" and has_blue_key:
+				node.queue_free()
+				continue
+			elif node.key_type == "yellow" and has_yellow_key:
+				node.queue_free()
+				continue
+				
 			# connect to the key's "key_hit" signal
 			print("connected to key")
 			node.connect("player_entered", self, "key_get", [key_type])
