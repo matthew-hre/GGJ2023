@@ -102,13 +102,15 @@ filepath = "whoops"
 position = Vector2( 104.007, 168.456 )
 scale = Vector2( 4, 1e-05 )
 next_room = "basement-storage"
+new_X = 96
+new_Y = 8
 
 [node name="Door" parent="Interactives" instance=ExtResource( 5 )]
 position = Vector2( -9.88053, 72.3171 )
 scale = Vector2( 1, 4 )
 next_room = "basement-top-left"
-new_X = 10
-new_Y = 10
+new_X = 185
+new_Y = 65
 
 [node name="Door3" parent="Interactives" instance=ExtResource( 5 )]
 position = Vector2( 179, -10 )

@@ -59,3 +59,5 @@ shape = SubResource( 4 )
 position = Vector2( 109.017, -8.73084 )
 scale = Vector2( 4, 1 )
 next_room = "basement-top-right"
+new_X = 98
+new_Y = 150

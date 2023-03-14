@@ -95,8 +95,12 @@ shape = SubResource( 8 )
 position = Vector2( 41.7478, 177.094 )
 scale = Vector2( 3, 1 )
 next_room = "basement-bathroom"
+new_X = 32
+new_Y = 8
 
 [node name="Door" parent="Interactives" instance=ExtResource( 3 )]
 position = Vector2( 202.025, 85.5612 )
 scale = Vector2( 1, 4 )
 next_room = "basement-top-right"
+new_X = 10
+new_Y = 65
