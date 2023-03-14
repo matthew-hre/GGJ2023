@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fonts/notefont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/template/yellowkey.png" type="Texture" id=3]
+[ext_resource path="res://Assets/template/bluekey.png" type="Texture" id=4]
+[ext_resource path="res://Assets/template/redkey.png" type="Texture" id=5]
 
 [node name="Control" type="Control"]
 pause_mode = 2
@@ -16,6 +19,9 @@ __meta__ = {
 margin_right = 192.0
 margin_bottom = 168.0
 color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_right = 192.0
@@ -26,3 +32,18 @@ bbcode_text = "
 [center]paused"
 text = "
 paused"
+
+[node name="YellowKey" type="Sprite" parent="."]
+position = Vector2( -32.4228, 158.868 )
+texture = ExtResource( 3 )
+offset = Vector2( 147.777, -8.5331 )
+
+[node name="BlueKey" type="Sprite" parent="."]
+position = Vector2( -50.5542, 159.066 )
+texture = ExtResource( 4 )
+offset = Vector2( 147.777, -8.5331 )
+
+[node name="RedKey" type="Sprite" parent="."]
+position = Vector2( -67.7102, 159.142 )
+texture = ExtResource( 5 )
+offset = Vector2( 147.777, -8.5331 )

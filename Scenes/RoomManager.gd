@@ -46,6 +46,10 @@ func set_room():
 
 	get_all_doors()
 
+	# have the player connect to all the keys in the room
+	var player = get_node("/root/Game/Player")
+	player.connect_to_keys()
+
 	# free the room scene
 	room_scene.queue_free()
 

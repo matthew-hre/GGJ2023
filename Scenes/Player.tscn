@@ -9,11 +9,11 @@
 extents = Vector2( 3.04128, 3.77656 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 10, 25 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 1 )
 region = Rect2( 10, 0, 10, 25 )
 
 [sub_resource type="AtlasTexture" id=4]
@@ -25,18 +25,18 @@ atlas = ExtResource( 3 )
 region = Rect2( 10, 0, 10, 25 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 10, 25 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 4 )
 region = Rect2( 10, 0, 10, 25 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
-"name": "walk-right",
+"name": "walk-up-down",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ) ],
@@ -46,7 +46,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
-"name": "walk-up-down",
+"name": "walk-right",
 "speed": 5.0
 } ]
 

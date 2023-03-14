@@ -2,20 +2,53 @@ extends KinematicBody2D
 
 export (int) var speed = 1400
 
+export var has_blue_key = false
+export var has_red_key = false
+export var has_yellow_key = false
+
+var key_type = ""
+
 var velocity = Vector2()
 var can_move = true
 var dir = Vector2()
 
 func _ready():
 	# connect to the NoteManager's "note_hit" signal. the NoteManager is in the root node
-	get_tree().current_scene.get_node("NoteManager/NoteManager").connect("note_enter", self, "disable_movement")
-	get_tree().current_scene.get_node("NoteManager/NoteManager").connect("note_exit", self, "enable_movement")
+	var _connect1 = get_tree().current_scene.get_node("NoteManager/NoteManager").connect("note_enter", self, "disable_movement")
+	var _connect2 = get_tree().current_scene.get_node("NoteManager/NoteManager").connect("note_exit", self, "enable_movement")
+
+	connect_to_keys()
 
 func disable_movement():
 	can_move = false
 
 func enable_movement():
 	can_move = true
+
+func connect_to_keys():
+	# for every node in the Interacives node
+	for node in get_tree().current_scene.get_node("Interactives/Interactives").get_children():
+		print(node.name)
+		# if the node is a key
+		if "Key" in node.name:
+			# connect to the key's "key_hit" signal
+			print("connected to key")
+			node.connect("player_entered", self, "key_get", [key_type])
+
+func key_get(key_type, _other_thing):
+	print("key get")
+	# set the key type to the key type passed in
+	self.key_type = key_type
+	# set the key type to true
+	match key_type:
+		"blue":
+			has_blue_key = true
+		"red":
+			has_red_key = true
+		"yellow":
+			has_yellow_key = true
+
+	self.key_type = ""
 
 func get_input():
 	if can_move:

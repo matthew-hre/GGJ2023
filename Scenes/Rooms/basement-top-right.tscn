@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/TopLayer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/pillar.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/NoteTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/template/template-base.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Key.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.48839, 10.1987 )
@@ -114,3 +115,14 @@ position = Vector2( 179, -10 )
 next_room = "main_hallway"
 new_X = 8
 new_Y = 148
+
+[node name="Key3" parent="Interactives" instance=ExtResource( 6 )]
+position = Vector2( 160, 89.7027 )
+key_type = "yellow"
+
+[node name="Key2" parent="Interactives" instance=ExtResource( 6 )]
+position = Vector2( 80, 129 )
+key_type = "blue"
+
+[node name="Key" parent="Interactives" instance=ExtResource( 6 )]
+position = Vector2( 36, 85 )
