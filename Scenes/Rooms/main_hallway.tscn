@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/template/main-floor/hallwaytobathroomandkitchen.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/TopLayer.gd" type="Script" id=2]
@@ -10,9 +10,6 @@ extents = Vector2( 5.48839, 10.1987 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 81.3231, 10 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 0.41449, 40.4179 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 83.8819 )
@@ -49,10 +46,6 @@ centered = false
 [node name="BackWall" type="CollisionShape2D" parent="BottomLayer/Walls"]
 position = Vector2( 123, 9 )
 shape = SubResource( 2 )
-
-[node name="Stairs" type="CollisionShape2D" parent="BottomLayer/Walls"]
-position = Vector2( 168.938, 19.4087 )
-shape = SubResource( 3 )
 
 [node name="RightWall" type="CollisionShape2D" parent="BottomLayer/Walls"]
 position = Vector2( 201, 83 )
@@ -92,3 +85,4 @@ new_Y = 18
 position = Vector2( 200, 41 )
 scale = Vector2( 1, 4 )
 next_room = "kitchen"
+new_Y = 100
